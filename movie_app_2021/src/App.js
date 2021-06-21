@@ -1,6 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 
+function Food({fav}){
+  return <h1>I like {fav}</h1>;
+}
+
 function App() {
   return (
     <div className="App">
@@ -18,6 +22,10 @@ function App() {
           Learn React
         </a>
       </header>
+      <Food fav = "kimchi"/>
+      <Food fav = "ramen"/>
+      <Food fav = "pizza"/>
+      <Food fav = "taco"/>
     </div>
   );
 }
