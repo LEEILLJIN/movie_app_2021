@@ -23,20 +23,29 @@ class App extends React.Component{
   }
   render(){
     const { isLoading, movies } = this.state;
-    return <div>{isLoading ? "Loading..." 
-    : movies.map(movie => (//map함수는 반드시 무언가를 return해줘야한다. =>이면 return의 의미가 포함되어있는 것이다.
-        <Movie 
-          key ={movie.id}
-          id={movie.id} 
-          year={movie.year} 
-          title={movie.title} 
-          summary={movie.summary} 
-          poster={movie.medium_cover_image}
-       />
-      
-    
-    ))}
-    </div>
+    return(
+       <section className = "container">
+        {isLoading ?(
+        <div className = "loader">
+          <span className = "loader_text">Loading...</span>
+        </div>
+        ) : (
+         <div className = "movies">
+           { movies.map(movie => (//map함수는 반드시 무언가를 return해줘야한다. =>이면 return의 의미가 포함되어있는 것이다.
+          <Movie 
+            key ={movie.id}
+            id={movie.id} 
+            year={movie.year} 
+            title={movie.title} 
+            summary={movie.summary} 
+            poster={movie.medium_cover_image}
+            genres={movie.genres}
+           />
+            )) }
+         </div>
+        )}
+       </section>
+      );
   }
 }
 
