@@ -1,6 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import PropTypes from 'prop-types';
 import React from 'react';
 import axios from "axios";
 import Movie from './Movie';
